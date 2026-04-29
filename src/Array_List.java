@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Array_List {
@@ -8,10 +9,28 @@ public class Array_List {
 //    Pros: Extremely fast for retrieving data (get(index)) because it uses an index.
 //    Cons: Slower for inserting or deleting elements in the middle of the list, because all subsequent elements have to shift over to fill the gap or make room.
 static void main(String[] args) {
-    List<String> students= new ArrayList<>();
+    String[] names = new String[]{"Pheonix", "Wolf", "Eagle"};
+    List<String> students = new ArrayList<>(Arrays.asList(names));
     students.add("Pavan");
     students.add("Sai");
+    students.add(null);
+    students.add("Sai");
+    students.add("Sai");
+    students.add("Sai");
     students.add("Kalyan");
-
+    students.add(null);
+    System.out.println("Student at index 1 is" + students.get(1));
+    students.set(1, "Alane");
+    students.remove("Alane");
+    students.remove(1);
+    for (String s : students) {
+        System.out.print(s + ", ");
+    }
+    //Fast beacause it uses index to reteive elements
+    //slow at insertion and deletion at the middle of the list because once if element removed the next should be adjusted by moving forward.
+    // Default capacity is 0 -when instance is created
+    // initial capacity is 10 - after we add a value
+    // internal implementation is resizable array
+    //if we add 11th element it automatically creates new array with the capacity of 1.5x size of old one and moves all existing elements into it
 }
 }

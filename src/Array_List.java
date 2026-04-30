@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Array_List {
 //    The ArrayList
@@ -26,6 +27,12 @@ static void main(String[] args) {
     for (String s : students) {
         System.out.print(s + ", ");
     }
+
+    // using list iterator
+//    ListIterator<String> studentIterator = students.listIterator();
+
+
+
     //Fast beacause it uses index to reteive elements
     //slow at insertion and deletion at the middle of the list because once if element removed the next should be adjusted by moving forward.
     // Default capacity is 0 -when instance is created

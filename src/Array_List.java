@@ -29,11 +29,14 @@ static void main(String[] args) {
     }
 
     // using list iterator
-//    ListIterator<String> studentIterator = students.listIterator();
+    ListIterator<String> studentIterator = students.listIterator();
+    while (studentIterator.hasNext()){
+        System.out.println(studentIterator.next());
+    }
 
 
 
-    //Fast beacause it uses index to reteive elements
+    //Fast beacause it uses index to retreive elements
     //slow at insertion and deletion at the middle of the list because once if element removed the next should be adjusted by moving forward.
     // Default capacity is 0 -when instance is created
     // initial capacity is 10 - after we add a value

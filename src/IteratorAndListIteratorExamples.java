@@ -11,7 +11,6 @@ public class IteratorAndListIteratorExamples {
             if(evenRemove.next() %2 ==0) evenRemove.remove();
         }
         System.out.println(i);
-
     }
 
     static void main(String[] args) {

@@ -35,33 +35,57 @@ public class Stack_Example {
         }
         return stack.isEmpty();
     }
+
+    public int evaluatingReversePolishNotation(String[] s){
+        Stack<String> str = new Stack<>();
+        for(int i= 0;i<s.length;i++){
+            if("+-*/".contains(s[i])){
+                int b = Integer.parseInt(str.pop());
+                int a = Integer.parseInt(str.pop());
+
+                if(s[i] == "+")str.push(Integer.toString(a+b));
+                if(s[i] == "-")str.push(Integer.toString(a-b));
+                if(s[i] == "*")str.push(Integer.toString(a*b));
+                if(s[i] == "/")str.push(Integer.toString(a/b));
+
+            }
+            else{
+                str.push(s[i]);
+            }
+
+        }
+        return Integer.parseInt(str.pop());
+     }
+
+
+
     static void main(String[] args) {
-        System.out.println( new Stack_Example().validParanthesis("[({)]"));
-        Stack<String> books  = new Stack<>();
-        books.add("Java");
-        books.add(0,"Sql");
-        books.addFirst("DSA");
-        books.addFirst("removed this");
-        System.out.println(books);
-        books.remove(0);
-        books.addLast("Python");
-        System.out.println(books.getLast());
-        books.set(books.indexOf("Python"),"Springboot");
-        System.out.println(books.get(books.indexOf("Java")));
-        Stack<String> games = new Stack<>();
+        System.out.println( new Stack_Example().evaluatingReversePolishNotation(new String[]{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}));
+//        Stack<String> books  = new Stack<>();
+//        books.add("Java");
+//        books.add(0,"Sql");
+//        books.addFirst("DSA");
+//        books.addFirst("removed this");
+//        System.out.println(books);
+//        books.remove(0);
+//        books.addLast("Python");
+//        System.out.println(books.getLast());
+//        books.set(books.indexOf("Python"),"Springboot");
+//        System.out.println(books.get(books.indexOf("Java")));
+//        Stack<String> games = new Stack<>();
         //index start from 1 at top (Last element entry)
         //    TOP
 //            NFS most wanted  -> position 1
 //            Forza horizon 5   -> position 2
 //            GTA 5   -> position 3
 //            BOTTOM
-        games.add("GTA 5");
-        games.push("Forza Horizon 5");
-        games.push("NFS Most Wanted");
-        System.out.println(games.peek());
-        System.out.println(games.search("GTA 5")); //op:3 gives position based on the stack element position
-        System.out.println(games.indexOf("GTA 5")); // op:0 gives based on index
-        System.out.println(games.isEmpty());
-        System.out.println(games.empty());
+//        games.add("GTA 5");
+//        games.push("Forza Horizon 5");
+//        games.push("NFS Most Wanted");
+//        System.out.println(games.peek());
+//        System.out.println(games.search("GTA 5")); //op:3 gives position based on the stack element position
+//        System.out.println(games.indexOf("GTA 5")); // op:0 gives based on index
+//        System.out.println(games.isEmpty());
+//        System.out.println(games.empty());
     }
 }

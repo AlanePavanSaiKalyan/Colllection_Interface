@@ -18,10 +18,11 @@ class Vector_Example {
         newCars.add("Punch");
         newCars.add("Harrier Ev");
         newCars.add("Nexon");
-        List<String> allCars = new Vector<>(Arrays.asList(cars));
+        Vector<String> allCars = new Vector<>(Arrays.asList(cars));
         allCars.add("i20");
         allCars.remove("Alto");
         allCars.removeFirst();
+        System.out.println(allCars.capacity());
         allCars.addAll(allCars.size()-1,newCars);
         allCars.clear();
         Iterator<String> allCarsIterator = allCars.iterator();

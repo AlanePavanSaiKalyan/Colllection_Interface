@@ -48,9 +48,39 @@ public class LinkedListExample {
 
     }
 
+    public void methodsPractice(){
+        LinkedList<String> ll =new LinkedList<>();
+        ll.offer("first");
+        ll.offer("Second");
+        ll.offer("Third");
+        ll.poll();
+        System.out.println(ll.size());
+        System.out.println(ll);
+
+        ll.clear();
+
+        ll.push("1");
+        ll.push("2");
+        ll.push(("3"));
+        System.out.println(ll.peek());
+
+        ll.poll();
+        System.out.println(ll);
+
+        ll.clear();
+        ll.offer("Initial");
+        ll.addLast("Last");
+        ll.addFirst("first");
+        System.out.println(ll);
+        ll.removeFirst();
+        System.out.println(ll);
+        ll.removeLast();
+        System.out.println(ll);
+    }
+
     static void main(String[] args) {
         LinkedListExample ll = new LinkedListExample();
-        ll.stackImplementation();
+        ll.methodsPractice();
 
     }
 }
